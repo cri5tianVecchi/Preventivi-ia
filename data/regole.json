@@ -1,0 +1,169 @@
+{
+  "_nota": "Regole DEMO, semplificate. I valori di portata sono indicativi e non vanno usati per progettare impianti reali. Ogni 'tipo' corrisponde a una funzione Python nel motore di calcolo (Fase 1).",
+  "regole": [
+    {
+      "id": "R01",
+      "nome": "Portata cavo ≥ corrente interruttore",
+      "gravita": "blocco",
+      "tipo": "portata_cavo",
+      "descrizione": "Il cavo associato a un interruttore deve avere portata (Iz) maggiore o uguale alla corrente nominale dell'interruttore (In).",
+      "parametri": {
+        "condizione_posa": "cavo multipolare in tubo a parete, 30°C (semplificato)",
+        "portata_a_per_sezione": {
+          "2_conduttori_carichi": {"1.5": 23, "2.5": 31, "4": 42, "6": 54, "10": 75, "16": 100, "25": 133, "35": 164, "50": 198, "70": 253, "95": 306, "120": 354},
+          "3_conduttori_carichi": {"1.5": 20, "2.5": 28, "4": 37, "6": 48, "10": 66, "16": 88, "25": 117, "35": 144, "50": 175, "70": 222, "95": 269, "120": 312}
+        },
+        "conduttori_carichi_per_poli": {"1P": 2, "1P+N": 2, "2P": 2, "3P": 3, "4P": 3}
+      }
+    },
+    {
+      "id": "R02",
+      "nome": "Conduttori cavo sufficienti per i poli",
+      "gravita": "blocco",
+      "tipo": "conduttori_vs_poli",
+      "descrizione": "Un cavo multipolare deve avere almeno i conduttori attivi richiesti dai poli dell'interruttore più il conduttore di protezione (PE).",
+      "parametri": {
+        "conduttori_minimi_per_poli": {"1P": 3, "1P+N": 3, "2P": 3, "3P": 4, "4P": 5}
+      }
+    },
+    {
+      "id": "R03",
+      "nome": "Sezione minima per tipo di circuito",
+      "gravita": "avviso",
+      "tipo": "sezione_minima_circuito",
+      "descrizione": "Sezioni minime consigliate per i circuiti terminali.",
+      "parametri": {
+        "sezione_min_mm2": {"illuminazione": 1.5, "prese": 2.5, "forza_motrice": 4}
+      }
+    },
+    {
+      "id": "R04",
+      "nome": "Moduli DIN sufficienti nel centralino",
+      "gravita": "blocco",
+      "tipo": "capienza_quadro",
+      "descrizione": "La somma dei moduli DIN dei dispositivi assegnati a un centralino modulare non può superare i moduli disponibili.",
+      "parametri": {
+        "campo_moduli_dispositivo": "moduli_din",
+        "campo_moduli_quadro": "attributi.moduli_disponibili"
+      }
+    },
+    {
+      "id": "R05",
+      "nome": "Riserva spazio nel centralino",
+      "gravita": "avviso",
+      "tipo": "riserva_quadro",
+      "descrizione": "È buona pratica lasciare almeno il 20% di moduli liberi per ampliamenti futuri.",
+      "parametri": {"riserva_min_pct": 20}
+    },
+    {
+      "id": "R06",
+      "nome": "Scatolati solo in quadri a armadio",
+      "gravita": "blocco",
+      "tipo": "montaggio_compatibile",
+      "descrizione": "Gli interruttori scatolati (montaggio su piastra) richiedono un quadro a armadio, non un centralino modulare.",
+      "parametri": {
+        "categoria_dispositivo": "scatolati",
+        "richiede_quadro_con": {"tipo_quadro": "armadio", "accetta_scatolati": true}
+      }
+    },
+    {
+      "id": "R07",
+      "nome": "Blocco differenziale compatibile con il magnetotermico",
+      "gravita": "blocco",
+      "tipo": "accoppiamento_blocco_diff",
+      "descrizione": "Un blocco differenziale va accoppiato a un magnetotermico con lo stesso numero di poli (2P con 1P+N/2P, 4P con 3P/4P) e corrente nominale non superiore alla corrente massima del blocco.",
+      "parametri": {
+        "poli_compatibili": {"2P": ["1P+N", "2P"], "4P": ["3P", "4P"]}
+      }
+    },
+    {
+      "id": "R08",
+      "nome": "Potere di interruzione ≥ corrente di cortocircuito",
+      "gravita": "blocco",
+      "tipo": "potere_interruzione",
+      "descrizione": "Se la richiesta indica la corrente di cortocircuito presunta (Icc), ogni interruttore deve avere potere di interruzione maggiore o uguale.",
+      "parametri": {
+        "campo_richiesta": "icc_presunta_ka",
+        "campo_articolo": "attributi.potere_interruzione_ka"
+      }
+    },
+    {
+      "id": "R09",
+      "nome": "Selettività tra differenziali",
+      "gravita": "avviso",
+      "tipo": "selettivita_differenziali",
+      "descrizione": "Se a valle ci sono differenziali da 30mA, il differenziale generale a monte dovrebbe essere selettivo (tipo S) con sensibilità maggiore (es. 300mA).",
+      "parametri": {"sensibilita_monte_min_ma": 300, "richiede_selettivo": true}
+    },
+    {
+      "id": "R10",
+      "nome": "Classe differenziale per carichi elettronici",
+      "gravita": "avviso",
+      "tipo": "classe_differenziale",
+      "descrizione": "Per circuiti con carichi elettronici (inverter, pompe di calore, piani a induzione, lavatrici) è sconsigliato il tipo AC: proporre almeno tipo A, o tipo F per carichi con inverter monofase.",
+      "parametri": {
+        "carichi_sensibili": ["inverter", "pompa di calore", "induzione", "lavatrice", "fotovoltaico", "colonnina"],
+        "classe_minima": "A",
+        "classe_consigliata_inverter": "F"
+      }
+    },
+    {
+      "id": "R11",
+      "nome": "Grado IP per ambienti esterni",
+      "gravita": "blocco",
+      "tipo": "grado_ip_ambiente",
+      "descrizione": "Quadri e prese installati all'esterno o in ambienti umidi devono avere grado di protezione almeno IP55 (quadri) e IP67 (prese esposte).",
+      "parametri": {
+        "ip_minimo": {"quadri": 55, "prese_industriali": 67},
+        "ambienti": ["esterno", "umido", "cantiere"]
+      }
+    },
+    {
+      "id": "R12",
+      "nome": "Contattore dimensionato sul carico",
+      "gravita": "blocco",
+      "tipo": "portata_contattore",
+      "descrizione": "La corrente AC-3 (o nominale per i modulari) del contattore deve essere maggiore o uguale alla corrente del carico comandato.",
+      "parametri": {"campi_corrente": ["attributi.corrente_ac3_a", "attributi.corrente_a"]}
+    },
+    {
+      "id": "R13",
+      "nome": "Protezione a monte dello scaricatore",
+      "gravita": "avviso",
+      "tipo": "protezione_spd",
+      "descrizione": "Lo scaricatore richiede a monte una protezione con corrente nominale non superiore al valore massimo indicato dal costruttore.",
+      "parametri": {"campo_massimo": "attributi.protezione_monte_max_a"}
+    },
+    {
+      "id": "R14",
+      "nome": "Morsetto adatto alla sezione del cavo",
+      "gravita": "blocco",
+      "tipo": "range_morsetto",
+      "descrizione": "La sezione del cavo deve rientrare nel range del morsetto associato.",
+      "parametri": {"campo_min": "attributi.sezione_min_mm2", "campo_max": "attributi.sezione_max_mm2"}
+    },
+    {
+      "id": "R15",
+      "nome": "Arrotondamento alla confezione",
+      "gravita": "avviso",
+      "tipo": "multiplo_confezione",
+      "descrizione": "Le quantità si arrotondano per eccesso al multiplo della confezione (es. matassa da 100 m, confezione da 10 pz). Mostrare la quantità richiesta e quella fatturata.",
+      "parametri": {"arrotondamento": "eccesso"}
+    },
+    {
+      "id": "R16",
+      "nome": "Sconto massimo per categoria",
+      "gravita": "blocco",
+      "tipo": "sconto_massimo",
+      "descrizione": "Il commerciale non può applicare uno sconto superiore al massimo previsto per la categoria senza approvazione.",
+      "parametri": {
+        "sconto_max_pct": {
+          "cavi": 55, "magnetotermici": 50, "differenziali": 50, "magnetotermici_differenziali": 50,
+          "blocchi_differenziali": 50, "quadri": 45, "scatolati": 40, "sezionatori": 50, "contattori": 45,
+          "comando": 45, "scaricatori": 40, "tubi_canaline": 55, "morsetti": 50, "prese_industriali": 45, "accessori": 50
+        },
+        "default": 35
+      }
+    }
+  ]
+}
