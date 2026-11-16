@@ -1,0 +1,130 @@
+{
+  "documento": "rfq_02_email_disordinata.pdf",
+  "difficolta": "difficile",
+  "cosa_testa": "Testo libero, termini colloquiali ('salvavita', '5x6 per esterno', 'una cinquantina'), contesto tecnico (esterno, Icc 15kA) da estrarre, un'incompatibilità voluta.",
+  "contesto": {
+    "ambiente": "esterno",
+    "icc_presunta_ka": 15,
+    "tipo_impianto": "industriale"
+  },
+  "righe": [
+    {
+      "descrizione_documento": "quadro generale da esterno almeno IP55, abbastanza grande per uno scatolato",
+      "quantita_richiesta": 1,
+      "unita": "pz",
+      "codice_atteso": "QDX-ARM55-800600",
+      "quantita_fatturata_attesa": 1,
+      "alternative_accettabili": [
+        "QDX-ARM55-600400",
+        "QDX-ARM55-1000800",
+        "QDX-ARM55-1200800"
+      ],
+      "note": "Dimensione non specificata: accettabile qualsiasi armadio IP55."
+    },
+    {
+      "descrizione_documento": "generale scatolato 4 poli 160A",
+      "quantita_richiesta": 1,
+      "unita": "pz",
+      "codice_atteso": "VOL-SC4P-160-25",
+      "quantita_fatturata_attesa": 1,
+      "alternative_accettabili": [
+        "VOL-SC4P-160-36"
+      ],
+      "note": "Icc 15kA: entrambi i poteri di interruzione vanno bene, il 25kA è il più economico."
+    },
+    {
+      "descrizione_documento": "differenziale generale 4 poli 63A 300mA selettivo",
+      "quantita_richiesta": 1,
+      "unita": "pz",
+      "codice_atteso": "VOL-ID4P-63-300AS",
+      "quantita_fatturata_attesa": 1
+    },
+    {
+      "descrizione_documento": "magnetotermico 4 poli C32 da 10kA (linea forza motrice)",
+      "quantita_richiesta": 6,
+      "unita": "pz",
+      "codice_atteso": "VOL-MT4P-C32-10",
+      "quantita_fatturata_attesa": 6
+    },
+    {
+      "descrizione_documento": "differenziale da 30mA da abbinare ai magnetotermici delle linee FM",
+      "quantita_richiesta": 6,
+      "unita": "pz",
+      "codice_atteso": "VOL-BD4P-40-30A",
+      "quantita_fatturata_attesa": 6,
+      "alternative_accettabili": [
+        "VOL-BD4P-63-30A"
+      ],
+      "note": "Blocco differenziale 4P: 40A è il minimo compatibile con C32."
+    },
+    {
+      "descrizione_documento": "cavo 5x6 per esterno",
+      "quantita_richiesta": 180,
+      "unita": "m",
+      "codice_atteso": "CVX-FG16OR16-5G060",
+      "quantita_fatturata_attesa": 200,
+      "note": "'5x6' = 5G6; 'per esterno' = FG16OR16."
+    },
+    {
+      "descrizione_documento": "prese CEE 3P+N+T 32A stagne IP67",
+      "quantita_richiesta": 4,
+      "unita": "pz",
+      "codice_atteso": "VOL-PCE-323PNT-67",
+      "quantita_fatturata_attesa": 4
+    },
+    {
+      "descrizione_documento": "salvavita per l'illuminazione 10A",
+      "quantita_richiesta": 2,
+      "unita": "pz",
+      "codice_atteso": "VOL-MTD1N-C10-30AC",
+      "quantita_fatturata_attesa": 2,
+      "alternative_accettabili": [
+        "VOL-MTD1N-C10-30A"
+      ],
+      "note": "'Salvavita' = magnetotermico differenziale 1P+N. Tipo non indicato."
+    },
+    {
+      "descrizione_documento": "magnetotermico differenziale 16A tipo AC per la pompa di calore",
+      "quantita_richiesta": 1,
+      "unita": "pz",
+      "codice_atteso": "VOL-MTD1N-C16-30AC",
+      "quantita_fatturata_attesa": 1,
+      "note": "Il cliente chiede AC: va proposto ma con avviso R10."
+    },
+    {
+      "descrizione_documento": "contattore tripolare 25A bobina 230V per la pompa",
+      "quantita_richiesta": 1,
+      "unita": "pz",
+      "codice_atteso": "FRT-CT3P-25-230",
+      "quantita_fatturata_attesa": 1
+    },
+    {
+      "descrizione_documento": "scaricatore trifase tipo 2",
+      "quantita_richiesta": 1,
+      "unita": "pz",
+      "codice_atteso": "VOL-SPD2-3PN",
+      "quantita_fatturata_attesa": 1
+    },
+    {
+      "descrizione_documento": "pressacavi M25",
+      "quantita_richiesta": 50,
+      "unita": "pz",
+      "codice_atteso": "PLX-PRC-M25",
+      "quantita_fatturata_attesa": 50
+    }
+  ],
+  "avvisi_attesi": [
+    {
+      "regola": "R08",
+      "motivo": "Magnetotermici C32 da 10kA con Icc presunta 15kA: potere di interruzione insufficiente"
+    },
+    {
+      "regola": "R10",
+      "motivo": "Differenziale tipo AC sulla linea della pompa di calore"
+    },
+    {
+      "regola": "R15",
+      "motivo": "Cavo 5G6: 180 m richiesti, 200 m fatturati (matassa 100 m)"
+    }
+  ]
+}

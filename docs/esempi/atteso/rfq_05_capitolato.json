@@ -1,0 +1,77 @@
+{
+  "documento": "rfq_05_capitolato.pdf",
+  "difficolta": "difficile",
+  "cosa_testa": "Documento lungo su più pagine con molto testo da ignorare (condizioni generali), articoli dentro elenchi puntati, sinonimi tecnici ('limitatore di sovratensione', 'classe A', 'Idn 0,03A'), una quantità da calcolare (4 x 40 m).",
+  "contesto": {
+    "ambiente": "interno",
+    "icc_presunta_ka": 6,
+    "tipo_impianto": "pubblico"
+  },
+  "righe": [
+    {
+      "descrizione_documento": "Centralino da parete in materiale isolante, 36 moduli DIN, grado di protezione IP65",
+      "quantita_richiesta": 1,
+      "unita": "pz",
+      "codice_atteso": "QDX-CP65-36",
+      "quantita_fatturata_attesa": 1
+    },
+    {
+      "descrizione_documento": "Interruttore generale magnetotermico quadripolare, In = 40A, curva C, Pdi 10kA",
+      "quantita_richiesta": 1,
+      "unita": "pz",
+      "codice_atteso": "VOL-MT4P-C40-10",
+      "quantita_fatturata_attesa": 1
+    },
+    {
+      "descrizione_documento": "Interruttori magnetotermici differenziali 1P+N, In 16A, Idn 0,03A, classe A",
+      "quantita_richiesta": 3,
+      "unita": "pz",
+      "codice_atteso": "VOL-MTD1N-C16-30A",
+      "quantita_fatturata_attesa": 3,
+      "note": "Idn 0,03A = 30mA: test di conversione unità."
+    },
+    {
+      "descrizione_documento": "Interruttori magnetotermici tripolari 16A curva D per avviamento motori",
+      "quantita_richiesta": 2,
+      "unita": "pz",
+      "codice_atteso": "VOL-MT3P-D16-10",
+      "quantita_fatturata_attesa": 2
+    },
+    {
+      "descrizione_documento": "Contattori tripolari categoria AC-3, In 12A, bobina 24Vac",
+      "quantita_richiesta": 2,
+      "unita": "pz",
+      "codice_atteso": "FRT-CT3P-12-24",
+      "quantita_fatturata_attesa": 2
+    },
+    {
+      "descrizione_documento": "Limitatore di sovratensione (SPD) Tipo 1+2, configurazione 3P+N",
+      "quantita_richiesta": 1,
+      "unita": "pz",
+      "codice_atteso": "VOL-SPD12-3PN",
+      "quantita_fatturata_attesa": 1,
+      "note": "'Limitatore di sovratensione' = scaricatore."
+    },
+    {
+      "descrizione_documento": "Cavo FG16R16 1x35 mm² – n. 4 conduttori da 40 m",
+      "quantita_richiesta": 160,
+      "unita": "m",
+      "codice_atteso": "CVX-FG16R16-1X0350",
+      "quantita_fatturata_attesa": 160,
+      "note": "Quantità da calcolare: 4 x 40 m = 160 m."
+    },
+    {
+      "descrizione_documento": "Conduttore di protezione FS17 1x16 mm² giallo/verde",
+      "quantita_richiesta": 40,
+      "unita": "m",
+      "codice_atteso": "CVX-FS17-160-GV",
+      "quantita_fatturata_attesa": 100
+    }
+  ],
+  "avvisi_attesi": [
+    {
+      "regola": "R15",
+      "motivo": "FS17 1x16 giallo-verde: 40 → 100 m"
+    }
+  ]
+}

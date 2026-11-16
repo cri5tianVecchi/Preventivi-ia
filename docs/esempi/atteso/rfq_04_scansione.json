@@ -1,0 +1,60 @@
+{
+  "documento": "rfq_04_scansione.pdf",
+  "difficolta": "difficile",
+  "cosa_testa": "PDF senza testo (solo immagine), leggermente ruotato e sporco: richiede OCR o un modello con input immagine. Contiene un abbinamento cavo/interruttore descritto in una nota.",
+  "contesto": {
+    "ambiente": "interno",
+    "tipo_impianto": "residenziale"
+  },
+  "righe": [
+    {
+      "descrizione_documento": "Centralino da parete IP40 12 moduli",
+      "quantita_richiesta": 1,
+      "unita": "pz",
+      "codice_atteso": "QDX-CP40-12",
+      "quantita_fatturata_attesa": 1
+    },
+    {
+      "descrizione_documento": "Interruttore sezionatore 2P 63A",
+      "quantita_richiesta": 1,
+      "unita": "pz",
+      "codice_atteso": "VOL-SZ2P-63",
+      "quantita_fatturata_attesa": 1
+    },
+    {
+      "descrizione_documento": "Magnetotermico 2P C32 6kA (linea box auto)",
+      "quantita_richiesta": 1,
+      "unita": "pz",
+      "codice_atteso": "VOL-MT2P-C32-6",
+      "quantita_fatturata_attesa": 1
+    },
+    {
+      "descrizione_documento": "Differenziale puro 2P 25A 30mA tipo F (lavatrice)",
+      "quantita_richiesta": 1,
+      "unita": "pz",
+      "codice_atteso": "VOL-ID2P-25-30F",
+      "quantita_fatturata_attesa": 1
+    },
+    {
+      "descrizione_documento": "Cavo FG16OR16 3G2,5 (linea box auto)",
+      "quantita_richiesta": 50,
+      "unita": "m",
+      "codice_atteso": "CVX-FG16OR16-3G025",
+      "quantita_fatturata_attesa": 100
+    }
+  ],
+  "avvisi_attesi": [
+    {
+      "regola": "R01",
+      "motivo": "Cavo 3G2,5 (portata 31A) sulla linea protetta da magnetotermico C32"
+    },
+    {
+      "regola": "R10",
+      "motivo": "Linea colonnina di ricarica: verificare classe del differenziale a monte"
+    },
+    {
+      "regola": "R15",
+      "motivo": "Cavo 3G2,5: 50 → 100 m"
+    }
+  ]
+}

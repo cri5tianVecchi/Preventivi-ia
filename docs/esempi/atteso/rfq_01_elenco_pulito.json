@@ -1,0 +1,115 @@
+{
+  "documento": "rfq_01_elenco_pulito.pdf",
+  "difficolta": "facile",
+  "cosa_testa": "Tabella ben strutturata, descrizioni quasi identiche al listino. Baseline: deve arrivare vicino al 100%.",
+  "contesto": {
+    "ambiente": "interno",
+    "tipo_impianto": "residenziale"
+  },
+  "righe": [
+    {
+      "descrizione_documento": "Centralino da incasso 24 moduli IP40 con portella",
+      "quantita_richiesta": 1,
+      "unita": "pz",
+      "codice_atteso": "QDX-CI40-24",
+      "quantita_fatturata_attesa": 1
+    },
+    {
+      "descrizione_documento": "Interruttore magnetotermico differenziale 1P+N C16 30mA tipo A",
+      "quantita_richiesta": 4,
+      "unita": "pz",
+      "codice_atteso": "VOL-MTD1N-C16-30A",
+      "quantita_fatturata_attesa": 4
+    },
+    {
+      "descrizione_documento": "Interruttore magnetotermico 1P+N C10 6kA",
+      "quantita_richiesta": 3,
+      "unita": "pz",
+      "codice_atteso": "VOL-MT1PN-C10-6",
+      "quantita_fatturata_attesa": 3
+    },
+    {
+      "descrizione_documento": "Interruttore magnetotermico 1P+N C20 6kA",
+      "quantita_richiesta": 2,
+      "unita": "pz",
+      "codice_atteso": "VOL-MT1PN-C20-6",
+      "quantita_fatturata_attesa": 2
+    },
+    {
+      "descrizione_documento": "Interruttore differenziale puro 2P 40A 30mA tipo A",
+      "quantita_richiesta": 1,
+      "unita": "pz",
+      "codice_atteso": "VOL-ID2P-40-30A",
+      "quantita_fatturata_attesa": 1
+    },
+    {
+      "descrizione_documento": "Relè passo-passo 16A 230V",
+      "quantita_richiesta": 2,
+      "unita": "pz",
+      "codice_atteso": "VOL-RPP-16",
+      "quantita_fatturata_attesa": 2
+    },
+    {
+      "descrizione_documento": "Cavo FS17 1x1,5 mm² blu",
+      "quantita_richiesta": 200,
+      "unita": "m",
+      "codice_atteso": "CVX-FS17-015-BL",
+      "quantita_fatturata_attesa": 200
+    },
+    {
+      "descrizione_documento": "Cavo FS17 1x1,5 mm² marrone",
+      "quantita_richiesta": 200,
+      "unita": "m",
+      "codice_atteso": "CVX-FS17-015-MA",
+      "quantita_fatturata_attesa": 200
+    },
+    {
+      "descrizione_documento": "Cavo FS17 1x1,5 mm² giallo-verde",
+      "quantita_richiesta": 200,
+      "unita": "m",
+      "codice_atteso": "CVX-FS17-015-GV",
+      "quantita_fatturata_attesa": 200
+    },
+    {
+      "descrizione_documento": "Cavo FS17 1x2,5 mm² blu",
+      "quantita_richiesta": 300,
+      "unita": "m",
+      "codice_atteso": "CVX-FS17-025-BL",
+      "quantita_fatturata_attesa": 300
+    },
+    {
+      "descrizione_documento": "Cavo FS17 1x2,5 mm² marrone",
+      "quantita_richiesta": 300,
+      "unita": "m",
+      "codice_atteso": "CVX-FS17-025-MA",
+      "quantita_fatturata_attesa": 300
+    },
+    {
+      "descrizione_documento": "Cavo FS17 1x2,5 mm² giallo-verde",
+      "quantita_richiesta": 300,
+      "unita": "m",
+      "codice_atteso": "CVX-FS17-025-GV",
+      "quantita_fatturata_attesa": 300
+    },
+    {
+      "descrizione_documento": "Tubo corrugato pesante Ø20",
+      "quantita_richiesta": 300,
+      "unita": "m",
+      "codice_atteso": "PLX-TCP-20",
+      "quantita_fatturata_attesa": 300
+    },
+    {
+      "descrizione_documento": "Tubo corrugato pesante Ø25",
+      "quantita_richiesta": 100,
+      "unita": "m",
+      "codice_atteso": "PLX-TCP-25",
+      "quantita_fatturata_attesa": 100
+    }
+  ],
+  "avvisi_attesi": [
+    {
+      "regola": "R05",
+      "motivo": "22 moduli occupati su 24 (riserva 8,3% < 20%)"
+    }
+  ]
+}

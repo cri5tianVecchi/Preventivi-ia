@@ -1,0 +1,104 @@
+{
+  "documento": "rfq_03_distinta_excel.xlsx",
+  "difficolta": "media",
+  "cosa_testa": "Excel con celle unite, intestazione non sulla prima riga, righe separatore, unità miste ('nr', 'mt', '250 mt' nella cella quantità), un secondo foglio da ignorare, un articolo fuori listino.",
+  "contesto": {
+    "ambiente": "interno",
+    "tipo_impianto": "industriale"
+  },
+  "righe": [
+    {
+      "descrizione_documento": "CENTRALINO IP65 18 MOD.",
+      "quantita_richiesta": 1,
+      "unita": "pz",
+      "codice_atteso": "QDX-CP65-18",
+      "quantita_fatturata_attesa": 1
+    },
+    {
+      "descrizione_documento": "MT 3P C25 6kA",
+      "quantita_richiesta": 3,
+      "unita": "pz",
+      "codice_atteso": "VOL-MT3P-C25-6",
+      "quantita_fatturata_attesa": 3
+    },
+    {
+      "descrizione_documento": "MT 1P+N C16",
+      "quantita_richiesta": 8,
+      "unita": "pz",
+      "codice_atteso": "VOL-MT1PN-C16-6",
+      "quantita_fatturata_attesa": 8,
+      "alternative_accettabili": [
+        "VOL-MT1PN-C16-45"
+      ],
+      "note": "Potere di interruzione non indicato."
+    },
+    {
+      "descrizione_documento": "Contattore mod. 2NO 25A",
+      "quantita_richiesta": 2,
+      "unita": "pz",
+      "codice_atteso": "VOL-CM2NO-25",
+      "quantita_fatturata_attesa": 2
+    },
+    {
+      "descrizione_documento": "Crepuscolare",
+      "quantita_richiesta": 1,
+      "unita": "pz",
+      "codice_atteso": "VOL-CRP-16",
+      "quantita_fatturata_attesa": 1
+    },
+    {
+      "descrizione_documento": "Orologio programmatore",
+      "quantita_richiesta": 1,
+      "unita": "pz",
+      "codice_atteso": "VOL-ORD-16",
+      "quantita_fatturata_attesa": 1,
+      "note": "'Orologio programmatore' = interruttore orario."
+    },
+    {
+      "descrizione_documento": "FG16OR16 3G2,5",
+      "quantita_richiesta": 250,
+      "unita": "m",
+      "codice_atteso": "CVX-FG16OR16-3G025",
+      "quantita_fatturata_attesa": 300
+    },
+    {
+      "descrizione_documento": "FG16OR16 5G4",
+      "quantita_richiesta": 120,
+      "unita": "m",
+      "codice_atteso": "CVX-FG16OR16-5G040",
+      "quantita_fatturata_attesa": 200
+    },
+    {
+      "descrizione_documento": "Canalina 40x25",
+      "quantita_richiesta": 30,
+      "unita": "m",
+      "codice_atteso": "PLX-CAN-4025",
+      "quantita_fatturata_attesa": 30
+    },
+    {
+      "descrizione_documento": "Morsetti DIN 6mmq",
+      "quantita_richiesta": 40,
+      "unita": "pz",
+      "codice_atteso": "FRT-MRS-6",
+      "quantita_fatturata_attesa": 40
+    },
+    {
+      "descrizione_documento": "Plafoniera LED stagna 1x36W",
+      "quantita_richiesta": 12,
+      "unita": "pz",
+      "codice_atteso": null,
+      "quantita_fatturata_attesa": null,
+      "note": "Non presente a listino: deve risultare NON abbinata, non inventata."
+    }
+  ],
+  "avvisi_attesi": [
+    {
+      "regola": "R04",
+      "motivo": "Dispositivi modulari per 32 moduli in un centralino da 18"
+    },
+    {
+      "regola": "R15",
+      "motivo": "FG16OR16 3G2,5: 250 → 300 m; 5G4: 120 → 200 m"
+    }
+  ]
+}
